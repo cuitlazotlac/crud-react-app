@@ -4,7 +4,6 @@ import { Link, useHistory } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
 
 export const EditUser = (props) => {
-  // const [name, setName] = useState("");
   const [selectedUser, setSelectedUser] = useState({
     id: '',
     name: ''
@@ -15,7 +14,7 @@ export const EditUser = (props) => {
 
   useEffect(() => {
     const userId = currentUserId;
-    const selectedUser = users.find(user => user.id === Number(userId));
+    const selectedUser = users.find(user => user.id === userId);
     setSelectedUser(selectedUser);
   }, [currentUserId, users])
 
