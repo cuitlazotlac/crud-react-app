@@ -8,7 +8,7 @@ import {
     Container
 } from 'reactstrap'
 
-const Heading = () => {
+export const Heading = () => {
     return (
         <Navbar color="dark" dark>
             <Container>
@@ -24,5 +24,3 @@ const Heading = () => {
         </Navbar>
     )
 }
-
-export default Heading;

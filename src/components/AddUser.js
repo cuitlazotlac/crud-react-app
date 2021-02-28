@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { GlobalContext } from "../context/GlobalState";
 
-const AddUser = () => {
+
+export const AddUser = () => {
+  const { users, addUser } = useContext(GlobalContext);
+  const history = useHistory();
+  const onSubmit = () => {
+    const newUser = {
+      id: 4,
+      name: 'User Four'
+    }
+    addUser(newUser);
+     history.push('/')
+  }
+
   return (
-    <Form>
+    <Form onSubmit={onSubmit}>
       <FormGroup>
         <Label>Name</Label>
         <Input type="text" placeholder="Enter Name"></Input>
@@ -15,4 +28,3 @@ const AddUser = () => {
   );
 };
 
-export default AddUser;
